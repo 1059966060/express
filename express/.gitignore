@@ -1,0 +1,8 @@
+#java
+*.class
+
+#eclipse ignore
+.settings/
+.project
+.classpatch
+
