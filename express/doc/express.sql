@@ -10,16 +10,16 @@ Target Server Type    : MYSQL
 Target Server Version : 50090
 File Encoding         : 65001
 
-Date: 2019-09-14 11:37:02
+Date: 2019-09-17 01:17:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `t_admit`
+-- Table structure for `t_admin`
 -- ----------------------------
-DROP TABLE IF EXISTS `t_admit`;
-CREATE TABLE `t_admit` (
+DROP TABLE IF EXISTS `t_admin`;
+CREATE TABLE `t_admin` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(10) default NULL,
   `account` char(6) NOT NULL,
@@ -29,9 +29,9 @@ CREATE TABLE `t_admit` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of t_admit
+-- Records of t_admin
 -- ----------------------------
-INSERT INTO `t_admit` VALUES ('1', '任有佛', '123456', '123456', '123456789');
+INSERT INTO `t_admin` VALUES ('1', '任有佛', '123456', '123456', '123456789');
 
 -- ----------------------------
 -- Table structure for `t_expressman`

@@ -9,14 +9,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import bean.Admit;
+import bean.Admin;
 import bean.ExpressMan;
-import service.AdmitService;
+import service.AdminService;
 import service.ExpressManService;
 @Controller
 public class LoginController extends BaseController {
 	@Autowired
-	private AdmitService admitService;
+	private AdminService adminService;
 	
 	@Autowired
 	private ExpressManService expressManService;
@@ -24,7 +24,7 @@ public class LoginController extends BaseController {
 	@RequestMapping(value="/login")
 	public String login(HttpSession session) {
 		session.setAttribute("expressMan", null);
-		session.setAttribute("admit", null);
+		session.setAttribute("admin", null);
 		session.setAttribute("expressman",null);
 		session.setAttribute("list",null);
 		return "login";
@@ -34,12 +34,12 @@ public class LoginController extends BaseController {
 	//登陆功能
 	@RequestMapping("/dologin")
 	public String dologin(@RequestParam String account,@RequestParam String password,HttpServletRequest request,HttpSession session) throws Exception{
-		Admit admit=admitService.selectAdmit(account);
+		Admin admin=adminService.selectAdmin(account);
 		String no=account;
 		ExpressMan expressMan=expressManService.selectExpressMan(no);
-		if(admit==null && expressMan==null) {
+		if(admin==null && expressMan==null) {
 			request.setAttribute("msg", "用户名不存在");
-		}else if(admit!=null && !password.equals(admit.getPassword())) {
+		}else if(admin!=null && !password.equals(admin.getPassword())) {
 			request.setAttribute("msg", "密码错误");
 		}else if(expressMan!=null && !password.equals(expressMan.getPassword())){
 			request.setAttribute("msg", "密码错误");
@@ -48,8 +48,8 @@ public class LoginController extends BaseController {
 			session.setAttribute("account", no);
 			request.setAttribute("msg", "登陆成功");
 			return "forward:/main";
-		}else if(admit!=null && password.equals(admit.getPassword())) {
-			session.setAttribute("admit", admit);
+		}else if(admin!=null && password.equals(admin.getPassword())) {
+			session.setAttribute("admin", admin);
 			session.setAttribute("account", account);
 			request.setAttribute("msg", "登陆成功");
 			return "forward:/main";

@@ -1,15 +1,20 @@
-package service;
+package dao;
 
 import java.util.List;
 
-import bean.Admit;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
+
+import bean.Admin;
 import bean.ExpressMan;
 import bean.PackageState;
 import bean.Packages;
 
-public interface AdmitService {
-	public Admit selectAdmit(String account)throws Exception;
-	public ExpressMan  selectExpressMan(String no)throws Exception;
+@Repository
+@Mapper
+public interface AdminDao {
+	public Admin selectAdmin(String account) throws Exception;
+	public ExpressMan selectExpressMan(String no) throws Exception;
 	public int insertExpressMan(ExpressMan expressMan)throws Exception;
 	public int deleteExpressMan(String no)throws Exception;
 	public Packages selectPackages1(int no)throws Exception;

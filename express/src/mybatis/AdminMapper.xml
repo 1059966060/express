@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.AdmitDao">
+<mapper namespace="dao.AdminDao">
 
-	<select id="selectAdmit" parameterType="String" resultType="Admit">
-		select account,name,password, email from t_admit where account=#{account}
+	<select id="selectAdmin" parameterType="String" resultType="Admin">
+		select account,name,password, email from t_admin where account=#{account}
 	</select>
 	
 	<select id="selectExpressMan" parameterType="String" resultType="ExpressMan">

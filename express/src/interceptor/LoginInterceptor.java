@@ -17,7 +17,7 @@ public class LoginInterceptor implements HandlerInterceptor{
 		}
 		//ªÒ»°Session
 		HttpSession session = request.getSession();
-		Object obj = session.getAttribute("admit");
+		Object obj = session.getAttribute("admin");
 		Object obj2=session.getAttribute("expressMan");
 		if(obj != null || obj2!=null)
 			return true;

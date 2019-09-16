@@ -1,14 +1,14 @@
 package bean;
 
-public class Admit {
+public class Admin {
 	private String name;
 	private String account;
 	private String password;
 	private String email;
-	public Admit() {
+	public Admin() {
 		super();
 	}
-	public Admit(String account, String password, String email,String name) {
+	public Admin(String account, String password, String email,String name) {
 		super();
 		this.account = account;
 		this.password = password;
